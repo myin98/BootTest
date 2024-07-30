@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>HOME</title>
+</head>
+<body>
+	<main style="text-align: center; width: 200px; margin: 0 calc(50vw - 100px);">
+		<h1>데이터 목록</h1>
+		<table style="width: 200px;">
+			<thead>
+				<tr>
+					<th>이름</th>
+					<th>나이</th>
+					<th>성별</th>
+				</tr>
+			</thead>
+			<tbody style="background-color: #eceff7;">
+				<a href="input">추가</a>
+				<tr th:each="map : ${list}">
+					<td th:text="${map.nm}"></td>
+					<td th:text="${map.age} + 살"></td>
+					<td th:text="${ (map.gend == true)? '남자':'여자'}"></td>
+				</tr>
+			</tbody>	
+		</table>
+		<img style="width: 200px" th:src="${img}"> 
+		<h6>트렌젝션 어쩌구 저쩌구 설정 저쩌구</h6>
+		<img style="width: 200px" th:src="${img2}">
+	</main>
+</body>
+</html>
